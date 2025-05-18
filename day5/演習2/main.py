@@ -285,3 +285,13 @@ if __name__ == "__main__":
     # ベースラインとの比較
     baseline_ok = ModelTester.compare_with_baseline(metrics)
     print(f"ベースライン比較: {'合格' if baseline_ok else '不合格'}")
+    # ---- 追記ここから ----
+
+    # 推論性能をテキストファイルにログ出力する(宿題用のコード)
+    performance_log_path = "performance_log.txt"
+    with open(performance_log_path, "a", encoding="utf-8") as f:
+        f.write(f"Accuracy: {metrics['accuracy']:.4f}, "
+                f"Inference Time: {metrics['inference_time']:.4f}秒\n")
+
+    print(f"推論性能を {performance_log_path} に追記しました。")
+# ---- 追記ここまで ----
